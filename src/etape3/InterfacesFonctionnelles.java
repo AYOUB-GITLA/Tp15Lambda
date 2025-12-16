@@ -1,0 +1,22 @@
+package etape3;
+
+import java.util.function.*;
+
+public class InterfacesFonctionnelles {
+
+	public static void main(String[] args) {
+        Predicate<String> estVide = s -> s.isEmpty();
+        System.out.println("La chaîne est vide: " + estVide.test(""));
+        System.out.println("La chaîne est vide: " + estVide.test("Bonjour"));
+        
+        Consumer<String> afficheur = s -> System.out.println("Affichage: " + s);
+        afficheur.accept("Bonjour le monde");
+        
+        Function<String, Integer> longueur = s -> s.length();
+        System.out.println("Longueur: " + longueur.apply("Bonjour"));
+        
+        Supplier<Double> nombreAleatoire = () -> Math.random();
+        System.out.println("Nombre aléatoire: " + nombreAleatoire.get());
+	}
+
+}
